@@ -35,9 +35,6 @@ func main() {
 		os.Exit(-1)
 	}
 
-	// build router
 	r := route.BuildRouter(cfg, db, rdb)
-
-	// start
 	r.Run()
 }
