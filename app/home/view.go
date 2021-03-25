@@ -9,7 +9,7 @@ import (
 
 func HomeRegister(rg *gin.RouterGroup) {
 	rg.GET("/", homePageHandler)
-	rg.POST("/", homePageHandler)
+	rg.POST("/", homePageHandler) // fix redirect issue
 }
 
 func homePageHandler(c *gin.Context) {
