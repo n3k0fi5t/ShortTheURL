@@ -30,6 +30,7 @@ func BuildRouter(cfg *config.Config, db *dbx.DB, rdb *cache.RDB) *Route {
 
 	// session middleware
 	store := cookie.NewStore([]byte("secret"))
+	store.Options(sessions.Options{MaxAge: 3})
 	r.route.Use(sessions.Sessions("ms", store))
 
 	// home page
